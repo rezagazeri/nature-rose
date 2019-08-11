@@ -1,10 +1,10 @@
 import React from 'react';
-import './App.css';
+import './scss/utils/app.scss';
 
 function App() {
   return (
     <div className="App">
-     
+     <h1>salam</h1>
     </div>
   );
 }
