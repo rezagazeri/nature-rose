@@ -1,3 +1,23 @@
-.App{
-    background-color: red;
+.header{
+    background-color: pink;
+}
+.titelheader{
+    background-image: url(../../images/titel.jpg);
+    height: 50px;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat; 
+}
+.header{
+    display: flex;
+    flex-flow: row wrap;
+}
+.header__img{
+    max-width: 100px;
+    height: auto;
+}
+.header__search-wrapper{
+    display: flex;
+    flex-flow: row wrap;
 }
