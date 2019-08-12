@@ -1,0 +1,68 @@
+//===================create element============================
+@mixin el($name) {
+     &__#{$name}{
+         @content;
+     }
+}
+//=====================create modifier===============================
+@mixin mod($name) {
+    &--#{$name}{
+        @content;
+    }
+}
+//===================assiegn display flex=============================
+@mixin flex-dis($dir,$algin:null,$jus:null){
+    display: flex;
+    flex-direction: $dir;
+    flex-wrap: wrap;
+    align-items:  $algin;
+    justify-content: $jus;
+  }
+  //====================================================================
+@mixin dim($w,$h) {
+    width: $w;
+    height: $h;
+}
+//========================gradiant ====================================
+
+@mixin background-gradient($start-color, $end-color, $orientation) { 
+    background: $start-color;
+
+    @if $orientation == 'ver' {
+      background: -webkit-linear-gradient(top, $start-color, $end-color);
+      background: linear-gradient(to bottom, $start-color, $end-color);
+    } @else if $orientation == 'hor' {
+      background: -webkit-linear-gradient(left, $start-color, $end-color);
+      background: linear-gradient(to right, $start-color, $end-color);
+    } @else {
+      background: -webkit-radial-gradient(center, ellipse cover, $start-color, $end-color);
+      background: radial-gradient(ellipse at center, $start-color, $end-color);
+    }
+}
+//==========================padding & margin=====================================
+@mixin padding($top, $right, $bottom, $left) {
+    padding-top: $top;
+    padding-right: $right;
+    padding-bottom: $bottom;
+    padding-left: $left;
+  }
+  //Margin mixin
+  @mixin margin($top, $right, $bottom, $left) {
+    margin-top: $top;
+    margin-right: $right;
+    margin-bottom: $bottom;
+    margin-left: $left;
+  }
+//===============================font face===========================================
+@mixin font-face($name, $file) {
+    @font-face {
+    font-family: "#{$name}";
+    src: url("../../fonts/#{$file}.eot");
+    src: url("../../fonts/#{$file}.eot?#iefix") format("embedded-opentype"),
+    url("../../fonts/#{$file}.woff") format("woff"),
+    url("../../fonts/#{$file}.ttf") format("truetype"),
+  }
+ }
+ //=================================================================================
+ 
+

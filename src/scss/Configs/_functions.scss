@@ -1,0 +1,3 @@
+@function em($target,$default:$mainpage-default--font){
+    @return  ($target/$default)*1em;
+ }

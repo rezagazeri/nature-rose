@@ -1,0 +1,13 @@
+.nature-nav{
+   display: flex;
+   flex-flow: row wrap;
+   padding: 5px;
+   background-color: lightsteelblue;
+}
+.spacer{
+    flex-grow: 1;
+}
+.link-active{
+  font-family: "shabnam";
+  @include margin(null,em(20px),null,em(20px));
+}

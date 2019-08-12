@@ -1,0 +1,17 @@
+
+.HumbergerButton{
+    @include flex-dis(column,center,space-around);
+    @include  dim(em(30px),em(24px));
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    @include margin(null,em(10px),null,em(20px));
+    @include el(line){
+        @include  dim(em(30px),em(2px));
+        background-color: #ffffff;
+
+    }
+    &:focus{
+        outline:none; 
+    }
+}

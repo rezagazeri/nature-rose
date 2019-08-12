@@ -1,0 +1,7 @@
+.sidetoolbar{
+    @include flex-dis(column,center);
+    background-color: map-get($back-color ,default );
+    min-height: 100vh;
+    width: 30%;
+    border: 1px solid #ccc;
+}

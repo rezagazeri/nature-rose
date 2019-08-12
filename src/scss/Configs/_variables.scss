@@ -1,0 +1,43 @@
+//font family=======================================
+$fontfamily : "Shabnam",Tahoma,Verdana,sans-serif;;
+//font size=========================================
+$mainpage-default--font   : 16px;
+$font-weight--small       : 300;
+$font-weight--meduim      : 400;
+$font-weight--larg        : 600;
+
+
+$default-line-height      : 1.4;
+//============color=================================
+     $cwhite :#FFFFFF;
+     $hcolor :#F59A83;
+//back-ground color---------------------------------------------
+$back-color : (
+    default : $cwhite,
+    gradiant-r :#ffa31a,
+    gradiant-l: #ffe0b3,
+    header : #F9F5F3,
+    x-header: darken(#F9F5F3,20%) ,  
+    footer : wheat,
+    msource: #F9F5F3,
+    mcontent: #F2EFEE,
+    resfooter : #F9F5F3
+   
+);
+
+
+//font color========================================
+$font-color : (
+    default :rgb(34, 33, 32),
+    whitef:#FFFFFF,
+    resheader : $hcolor
+
+);
+
+//media query=======================================
+$small-screen                : 1em;
+$medium-screen               : 20em;
+$large-screen                : 30em;
+$ultra-screen                : 60em;
+
+ 
