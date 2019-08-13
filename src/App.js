@@ -10,7 +10,7 @@ function App() {
       <TitelHeader />
       <Header />
       <ToolBar />
-      <SideToolbar />
+      {/* <SideToolbar /> */}
       <h1>سلام</h1>
     </div>
   );

@@ -9,13 +9,14 @@ $font-weight--larg        : 600;
 
 $default-line-height      : 1.4;
 //============color=================================
-     $cwhite :#FFFFFF;
+     $cwhite :rgb(85, 82, 82);
      $hcolor :#F59A83;
+     $menu-shadow:#ccc;
 //back-ground color---------------------------------------------
 $back-color : (
     default : $cwhite,
     gradiant-r :#ffa31a,
-    gradiant-l: #ffe0b3,
+    menu-linkHover: #ffcccc,
     header : #F9F5F3,
     x-header: darken(#F9F5F3,20%) ,  
     footer : wheat,
