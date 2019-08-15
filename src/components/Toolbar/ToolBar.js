@@ -4,7 +4,9 @@ import {NavLink,Link} from 'react-router-dom';
 import HumbergerButton from '../SideToolbar/HumbergerButton';
 const ToolBar = props=>(
    <header className="nature-nav"> 
-      <HumbergerButton />
+      <div className="nature-nav__toggelbtn">
+         <HumbergerButton click={props.sideMenuClick} />
+      </div>
       <nav className='navigation'>
          <ul >
             <li ><NavLink exact activeClassName ="link-active" to ='/' >مراقبت پوست

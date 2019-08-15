@@ -2,6 +2,9 @@
   @include flex-dis(row,center,flex-start);
   background-color: lightsteelblue;
    @include padding(null,em(10px),null,em(20px));
+   @include el(toggelbtn){
+     display: none;
+   }
 }
 //create navigation bar with flexbox
 .navigation{
@@ -25,7 +28,7 @@
   @include el(container){//first menu item
      position: absolute;
      top: 100%;
-    // display: none;
+    display: none;
      background-color:$menu-shadow;
      width:em(1100px);
   }

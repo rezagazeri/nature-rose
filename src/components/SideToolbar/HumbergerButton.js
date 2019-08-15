@@ -1,7 +1,7 @@
 import React from 'react';
 
 const HumbergerButton =props=>(
-    <button className="HumbergerButton">
+    <button className="HumbergerButton" onClick={props.click}>
        <div className ="HumbergerButton__line" />
        <div className ="HumbergerButton__line" />
        <div className ="HumbergerButton__line" />
