@@ -17,12 +17,6 @@ $back-color : (
     default : #ffff,
     backdrow :rgba(38, 38, 38,.7),
     menu-linkHover: #ffcccc,
-    header : #F9F5F3,
-    x-header: darken(#F9F5F3,20%) ,  
-    footer : wheat,
-    msource: #F9F5F3,
-    mcontent: #F2EFEE,
-    resfooter : #F9F5F3
    
 );
 
@@ -36,9 +30,13 @@ $font-color : (
 );
 
 //media query=======================================
-$small-screen                : 1em;
-$medium-screen               : 20em;
-$large-screen                : 30em;
-$ultra-screen                : 60em;
+$breakpoints: (
+  xs: 576px,
+  sm: 768px,
+  md: 992px,
+  lg: 1200px
+);
+// path==================================================
+$img-path     : '../../images';
 
  

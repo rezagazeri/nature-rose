@@ -63,6 +63,28 @@
     url("../../fonts/#{$file}.ttf") format("truetype"),
   }
  }
- //=================================================================================
- 
+ //==========================media query ===========================================
+@mixin for-phone-only {
+  @media (max-width: map-get($breakpoints , xs )) { @content; }
+}
+@mixin for-tablet-portrait {
+  @media (max-width: map-get($breakpoints , sm )) { @content; }
+}
+@mixin for-tablet-landscape {
+  @media (min-width: map-get($breakpoints , md )) { @content; }
+}
+@mixin for-desktop {
+  @media (min-width: map-get($breakpoints , lg )) { @content; }
+}
+//==============set image for div background====================================
+@mixin set-image($name,$h,$w,$size,$format) {
+  background-image: url("#{$img-path}/#{$name}.#{$format}");
+  width:$w;
+  height: $h;
+  background-repeat: no-repeat;
+  background-size: $size;
+
+}
+
+
 

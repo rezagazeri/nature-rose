@@ -2,10 +2,12 @@
     @include flex-dis(column,center);
     position: fixed;
     top: 0;
-    right: 0;
+    right: -100%;
     background-color: map-get($back-color ,default );
     min-height: 100%;
     width: 70%;
     max-width: em(400px);
     z-index: 200;
+    transform: translateX(100%);
+    transition: all .5s ease-out;
 }

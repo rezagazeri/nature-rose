@@ -5,6 +5,7 @@ import TitelHeader from './components/TitelHeader/TitelHeader';
 import ToolBar from './components/Toolbar/ToolBar';
 import SideToolbar from './components/SideToolbar/SideToolbar';
 import BackDrow from './components/BackDrow/BackDrow';
+import Hompage from './Pages/Hompage';
 export default class App extends Component {
   constructor(props){
     super(props);
@@ -26,7 +27,6 @@ export default class App extends Component {
     if (this.state.isOpenSidebarMenu ){
        menustate = (
         <div>
-           <SideToolbar />
            <BackDrow handlebackdrowClick={this.handleClick} />
          </div> 
         );
@@ -36,9 +36,10 @@ export default class App extends Component {
         <TitelHeader />
         <Header />
         <ToolBar sideMenuClick={this.handleClick} />
+        <SideToolbar />
         {menustate}
-  
-        <h1>سلام</h1>
+        <Hompage />
+        
       </div>
     )
   }

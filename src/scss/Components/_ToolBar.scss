@@ -5,6 +5,11 @@
    @include el(toggelbtn){
      display: none;
    }
+   @include for-tablet-portrait(){
+    @include el(toggelbtn){
+      display:block;
+    }
+   }
 }
 //create navigation bar with flexbox
 .navigation{
@@ -17,6 +22,7 @@
       display: block;
     }
   }
+  
   @include el(pust){//first menu 
     display: block;
     font-weight: bold;
@@ -53,4 +59,10 @@
 .link-active{
   font-family: "shabnam";
   @include margin(null,em(20px),null,em(20px));
+}
+@include for-tablet-portrait(){
+ 
+  .navigation{
+    display: none;
+  }
 }

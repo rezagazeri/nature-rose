@@ -1,0 +1,27 @@
+.cr-Homepage{
+    @include flex-dis(column,center,flex-start);
+    min-height: 100vh;
+    width: 96%;
+    border : 1px solid blueviolet;
+    @include margin(em(10px),auto,0,auto);
+    @include el(slitem){
+        @include flex-dis(row,center,space-between);
+        width: 100%;
+    }
+    @include el(mslider){
+        min-width: 60%;
+        height: em(515px);
+        border : 1px solid red;
+     } 
+     @include el(items){
+        border : 1px solid rgb(12, 202, 98);
+        min-width: calc(40% - 15px);
+        height: em(515px);
+    } 
+    @include el(collections){
+        @include flex-dis(row,center,space-between);
+        padding: em(10px);
+        width: 100%;  
+    }
+   
+}
