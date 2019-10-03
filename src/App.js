@@ -1,4 +1,5 @@
 import React,{Component} from 'react';
+import {Route,Switch} from 'react-router-dom';
 import './scss/utils/app.scss';
 import Header from './components/Header/Header'
 import TitelHeader from './components/TitelHeader/TitelHeader';
@@ -6,6 +7,8 @@ import ToolBar from './components/Toolbar/ToolBar';
 import SideToolbar from './components/SideToolbar/SideToolbar';
 import BackDrow from './components/BackDrow/BackDrow';
 import Hompage from './Pages/Hompage';
+import Shop from './Pages/Shop';
+
 export default class App extends Component {
   constructor(props){
     super(props);
@@ -38,7 +41,10 @@ export default class App extends Component {
         <ToolBar sideMenuClick={this.handleClick} />
         <SideToolbar />
         {menustate}
-        <Hompage />
+        <Switch >
+          <Route exact path ='/' render={(routeProps)=><Hompage {...routeProps} />} />
+          <Route exact path ='/shop' render={(routeProps)=><Shop {...routeProps} />} />
+        </Switch>
         
       </div>
     )

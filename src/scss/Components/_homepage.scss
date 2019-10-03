@@ -9,13 +9,15 @@
         width: 100%;
     }
     @include el(mslider){
-        min-width: 60%;
+        flex:1 0 auto;
         height: em(515px);
         border : 1px solid red;
      } 
      @include el(items){
         border : 1px solid rgb(12, 202, 98);
-        min-width: calc(40% - 15px);
+        @include flex-dis(column,center,space-between);
+       // min-width: 355px;
+        flex-flow: 0 0 355px; 
         height: em(515px);
     } 
     @include el(collections){

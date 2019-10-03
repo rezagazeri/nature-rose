@@ -1,8 +1,6 @@
 .cr-card{
-    @include dim(calc(25% - 8px),auto);
     border : 1px solid blue;
     box-sizing: border-box;
-    padding : em(5px) em(10px);
     @include el(header){
         @include flex-dis(row,center,space-between);
         padding : em(5px);
@@ -18,7 +16,7 @@
       
     }
     @include el(image){
-        @include dim(90%,auto);
+        @include dim(100%,248px);
     }
 
 }
