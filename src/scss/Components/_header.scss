@@ -1,0 +1,10 @@
+.cr-header{
+    @include flex-dis(row,center,space-between);
+    @include el(login-wrapper){
+        @include flex-dis(row,center,center);
+    }
+    @include el(search-wrapper){
+        @include flex-dis(row,center,center);
+        
+    }
+}

@@ -8,6 +8,7 @@ import SideToolbar from './components/SideToolbar/SideToolbar';
 import BackDrow from './components/BackDrow/BackDrow';
 import Hompage from './Pages/Hompage';
 import Shop from './Pages/Shop';
+import LoginLogoutPage from './Pages/Login-Logout';
 
 export default class App extends Component {
   constructor(props){
@@ -44,6 +45,7 @@ export default class App extends Component {
         <Switch >
           <Route exact path ='/' render={(routeProps)=><Hompage {...routeProps} />} />
           <Route exact path ='/shop' render={(routeProps)=><Shop {...routeProps} />} />
+          <Route exact path ='/signin' component={LoginLogoutPage } />
         </Switch>
         
       </div>
