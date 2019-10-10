@@ -1,0 +1,7 @@
+.cr-signin{
+    @include flex-dis(column,center,center);
+    width: em(380px);
+    @include el(btn-container){
+        @include flex-dis(row,center,space-between);
+    }
+}

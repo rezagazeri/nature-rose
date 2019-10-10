@@ -1,16 +1,21 @@
-import React, { Component } from 'react';
-import bn from '../../Utils/bemnames';
+import React from 'react';
+import {Link} from 'react-router-dom';
+import {auth} from '../../firebase/firebase.utils';
 import {ReactComponent as Logo } from '../../images/crown.svg';
+import bn from '../../Utils/bemnames';
 
 const bem = bn.create('header');
-export default class Header extends Component {
-    render() {
-        return (
+const Header = ({currentuser})=>(
+   
             <div className={bem.b('header')}>
                 <div className ={bem.e('login-wrapper')}>
                     <button ><span>سبد خريد</span></button> 
                     <div className = {bem.e('loginr')}>
-                        <a href="#"><span>ورود/ثبت نام</span></a>
+                         {
+                             currentuser?<div onClick={()=>auth.signOut()}>خروج</div>: 
+                             <Link to='/signin' ><span>ورود/ثبت نام</span></Link>
+                         }
+           
                     </div>  
                 </div>
                 <div className={bem.e('search-wrapper')}>
@@ -24,5 +29,4 @@ export default class Header extends Component {
                 </div>
             </div>
         )
-    }
-}
+export default Header;

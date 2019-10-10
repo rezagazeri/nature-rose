@@ -9,22 +9,35 @@ import BackDrow from './components/BackDrow/BackDrow';
 import Hompage from './Pages/Hompage';
 import Shop from './Pages/Shop';
 import LoginLogoutPage from './Pages/Login-Logout';
+import {auth} from './firebase/firebase.utils';
 
 export default class App extends Component {
   constructor(props){
     super(props);
     this.state={
-       isOpenSidebarMenu :false//open and close HumbergerMenu
+       isOpenSidebarMenu :false,//open and close HumbergerMenu
+       currentuser:null
     }
     this.handleClick = this.handleClick.bind(this);
   }
+  unsubscribeFromAuth = null;
+
   //open and close HumbergerMenu=========================================
   handleClick(){
     const HumbegerSitiation = this.state.isOpenSidebarMenu;
     this.setState({isOpenSidebarMenu : !HumbegerSitiation})
   }
-  //================show and hide sidebar menu========================
- 
+  //========================================
+ componentDidMount(){
+   this.unsubscribeFromAuth =auth.onAuthStateChanged(user=>{
+     this.setState({currentuser : user});
+   })
+
+ }
+
+ componentWillUnmount(){
+  this.unsubscribeFromAuth();
+}
   //===================================================================
   render() {
     let menustate;
@@ -38,7 +51,7 @@ export default class App extends Component {
     return (
       <div>
         <TitelHeader />
-        <Header />
+        <Header currentuser={this.state.currentuser} />
         <ToolBar sideMenuClick={this.handleClick} />
         <SideToolbar />
         {menustate}

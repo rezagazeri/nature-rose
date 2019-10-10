@@ -85,6 +85,10 @@
   background-size: $size;
 
 }
+@mixin shrinkLabel {
+  top: -14px;
+  font-size: 12px;
+}
 
 
 

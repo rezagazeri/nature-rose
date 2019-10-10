@@ -1,0 +1,38 @@
+.cr-g-input{
+    position: relative;
+    margin: 45px 0;
+    
+    @include el(f-input){
+        background: none;
+        color: map-get($font-color , default );
+        font-size: 18px;
+        padding: 10px 10px 10px 5px;
+        display: block;
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid red;
+        margin: 25px 0;
+        &:focus{
+            outline: none;
+        }
+        &:focus ~ .cr-g-input__f-lable{
+           @include shrinkLabel();
+        }
+    }
+    @include el(f-lable){
+       display: block;
+       position: absolute;
+       right: 5px;
+       top: 10px;
+       color: map-get($font-color , default );
+       font-size: 16px;
+       font-weight: normal;
+       transition: 300ms ease all;
+       &.shrink {
+        @include shrinkLabel();
+      }
+     
+    }
+    
+
+}
