@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import FormInput from '../FormInput/Forminput';
 import CustomButton from '../../components/Custombutton/Cusstombutton';
-import {signInWithGoogle} from '../../firebase/firebase.utils';
+import {signInWithGoogle,auth,createUserProfileDocument} from '../../firebase/firebase.utils';
 import bn from '../../Utils/bemnames';
 const bem =bn.create('signin'); 
 
@@ -15,14 +15,21 @@ export default class Signin extends Component {
             passwort : ''
         }
         this.handleOnChange=this.handleOnChange.bind(this);
-        this.HanleSubmit = this.HanleSubmit.bind(this);
+        this.HandleSubmit = this.HandleSubmit.bind(this);
     }
-    HanleSubmit(evt){
+    async HandleSubmit(evt){
         evt.preventDefault();
-        this.setState({
-            email : '',
-            passwort : ''
-        });
+        const {email,passwort}= this.state;
+        try{
+           await auth.signInWithEmailAndPassword(email,passwort);
+            this.setState({
+                email : '',
+                passwort : ''
+            });
+        }catch(error){
+            console.log('error creating signup', error.message); 
+        }
+       
 
     }
     handleOnChange(evt){
@@ -34,7 +41,7 @@ export default class Signin extends Component {
             <div className={bem.b('signin')}>
                <h1>email</h1>  
                <span>enter data</span>
-               <form onSubmit={this.HanleSubmit} className = {bem.e('form')}>
+               <form onSubmit={this.HandleSubmit} className = {bem.e('form')}>
                   <FormInput 
                     type ={'email'}
                     name={'email'}

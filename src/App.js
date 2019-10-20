@@ -9,14 +9,14 @@ import BackDrow from './components/BackDrow/BackDrow';
 import Hompage from './Pages/Hompage';
 import Shop from './Pages/Shop';
 import LoginLogoutPage from './Pages/Login-Logout';
-import {auth} from './firebase/firebase.utils';
+import {auth,createUserProfileDocument} from './firebase/firebase.utils';
 
 export default class App extends Component {
   constructor(props){
     super(props);
     this.state={
        isOpenSidebarMenu :false,//open and close HumbergerMenu
-       currentuser:null
+       currentUser:null
     }
     this.handleClick = this.handleClick.bind(this);
   }
@@ -29,10 +29,23 @@ export default class App extends Component {
   }
   //========================================
  componentDidMount(){
-   this.unsubscribeFromAuth =auth.onAuthStateChanged(user=>{
-     this.setState({currentuser : user});
-   })
+  this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
+    if (userAuth) {
+      const userRef = await createUserProfileDocument(userAuth);
+      userRef.onSnapshot(snapShot => {
+        this.setState({
+          currentUser: {
+            id: snapShot.id,
+            ...snapShot.data()
+          }
+        });
+      });
+    }else
+    {
+      this.setState({ currentUser: userAuth });
+    }
 
+  });
  }
 
  componentWillUnmount(){
@@ -51,7 +64,7 @@ export default class App extends Component {
     return (
       <div>
         <TitelHeader />
-        <Header currentuser={this.state.currentuser} />
+        <Header currentuser={this.state.currentUser} />
         <ToolBar sideMenuClick={this.handleClick} />
         <SideToolbar />
         {menustate}
