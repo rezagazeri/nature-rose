@@ -1,0 +1,4 @@
+export const userActionTyps = {
+    SET_CURRENT_USER : "SET_CURRENT_USER",
+    OPEN_CLOSE_SIDEMENUE :"OPEN_CLOSE_SIDEMENUE"
+};

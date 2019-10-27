@@ -1,5 +1,7 @@
 import React,{Component} from 'react';
 import {Route,Switch} from 'react-router-dom';
+import {connect} from 'react-redux';
+import {setCurrentUser,isOpenSidebarMenu} from './Redux';
 import './scss/utils/app.scss';
 import Header from './components/Header/Header'
 import TitelHeader from './components/TitelHeader/TitelHeader';
@@ -11,38 +13,35 @@ import Shop from './Pages/Shop';
 import LoginLogoutPage from './Pages/Login-Logout';
 import {auth,createUserProfileDocument} from './firebase/firebase.utils';
 
-export default class App extends Component {
+ class App extends Component {
   constructor(props){
     super(props);
-    this.state={
-       isOpenSidebarMenu :false,//open and close HumbergerMenu
-       currentUser:null
-    }
     this.handleClick = this.handleClick.bind(this);
   }
   unsubscribeFromAuth = null;
 
   //open and close HumbergerMenu=========================================
   handleClick(){
-    const HumbegerSitiation = this.state.isOpenSidebarMenu;
-    this.setState({isOpenSidebarMenu : !HumbegerSitiation})
+    const {isOpenSidebarMenu} = this.props;
+   // const HumbegerSitiation = this.state.isOpenSidebarMenu;
+   isOpenSidebarMenu();
   }
   //========================================
  componentDidMount(){
+const {setCurrentUser} = this.props;
+
   this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
     if (userAuth) {
       const userRef = await createUserProfileDocument(userAuth);
       userRef.onSnapshot(snapShot => {
-        this.setState({
-          currentUser: {
+        setCurrentUser({
             id: snapShot.id,
             ...snapShot.data()
-          }
-        });
+         });
       });
     }else
     {
-      this.setState({ currentUser: userAuth });
+      setCurrentUser(userAuth);
     }
 
   });
@@ -54,7 +53,8 @@ export default class App extends Component {
   //===================================================================
   render() {
     let menustate;
-    if (this.state.isOpenSidebarMenu ){
+
+    if (this.props.OpenCloseSideMenu){
        menustate = (
         <div>
            <BackDrow handlebackdrowClick={this.handleClick} />
@@ -64,7 +64,7 @@ export default class App extends Component {
     return (
       <div>
         <TitelHeader />
-        <Header currentuser={this.state.currentUser} />
+        <Header />
         <ToolBar sideMenuClick={this.handleClick} />
         <SideToolbar />
         {menustate}
@@ -78,4 +78,12 @@ export default class App extends Component {
     )
   }
 }
+const mapStateToProps = state=>({
+  OpenCloseSideMenu : state.user.isOpenSidebarMenu 
+})
+const mapDispatchToProps = dispatch=>({
+  setCurrentUser : user=>(dispatch(setCurrentUser(user))),
+  isOpenSidebarMenu :()=>(dispatch(isOpenSidebarMenu()))
+});
+export default connect(mapStateToProps,mapDispatchToProps)(App); 
 

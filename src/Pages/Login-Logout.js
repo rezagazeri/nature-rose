@@ -2,7 +2,6 @@ import React from 'react';
 import bn from '../Utils/bemnames';
 import Signin from '../components/Signin/Signin';
 import Signup from '../components/Signup/Signup';
-import { createStore } from 'redux';
 
 
 const bem =bn.create('signin_page');

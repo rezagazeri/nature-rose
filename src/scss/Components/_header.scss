@@ -1,10 +1,16 @@
 .cr-header{
     @include flex-dis(row,center,space-between);
+    position: relative;
+    padding: em(5px) em(15px);
     @include el(login-wrapper){
-        @include flex-dis(row,center,center);
+        @include flex-dis(row,center,space-between);
     }
     @include el(search-wrapper){
         @include flex-dis(row,center,center);
         
     }
+    @include el(loginr){
+        margin-right:em(10px); 
+    }
+  
 }

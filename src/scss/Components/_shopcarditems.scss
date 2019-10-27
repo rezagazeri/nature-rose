@@ -1,0 +1,10 @@
+.cr-shopcarditems{
+    @include flex-dis(column,center,center);
+    position: absolute;
+    top: 50px;
+    @include dim(em(240px),auto);
+    padding: 20px;
+    border: 1px solid black;
+    background-color: white;
+    z-index: 5;
+}

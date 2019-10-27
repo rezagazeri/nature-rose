@@ -1,0 +1,32 @@
+.shopicon{
+    @include flex-dis(row,center,center);
+    position: relative;
+    @include padding(2px,5px,2px,5px);
+    background-color: map-get($back-color , bshop-icon );
+    border-radius: 5px;
+    cursor: pointer;
+
+    @include el(icon){
+        @include dim(25px,25px);
+    }
+    @include el(count){
+        position: absolute;
+         top:10px;
+         right:8px;
+        font-size: $mainpage-default--font;
+        font-weight: $font-weight--meduim;
+        @include dim(18px,18px);
+        border-radius: 50%;
+        background-color:none;
+        color: map-get($font-color , whitef );
+        text-align: center;
+        vertical-align:middle;
+        padding: 2px;
+    }  
+    @include el(text){
+        font-size: $font-size-small;
+        color: map-get($font-color , whitef );
+        margin-right: em(5px);
+    }
+}
+

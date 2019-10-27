@@ -1,22 +1,24 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import {auth} from '../../firebase/firebase.utils';
+import {connect} from 'react-redux';
+import Shopcardicon from '../ShopCardIcon/Shopcardicon';
+import ShopCardDropDown from '../ShopCardDropdown/ShopCardDropDown';
 import {ReactComponent as Logo } from '../../images/crown.svg';
 import bn from '../../Utils/bemnames';
 
 const bem = bn.create('header');
-const Header = ({currentuser})=>(
+const Header = ({currentUser,Hidden_Show_DW })=>(
    
             <div className={bem.b('header')}>
                 <div className ={bem.e('login-wrapper')}>
-                    <button ><span>سبد خريد</span></button> 
+                    <Shopcardicon />
                     <div className = {bem.e('loginr')}>
                          {
-                             currentuser?<div onClick={()=>auth.signOut()}>خروج</div>: 
-                             <Link to='/signin' ><span>ورود/ثبت نام</span></Link>
+                             currentUser?<div onClick={()=>auth.signOut()}>خروج</div>: 
+                             <Link to='/signin'><span>ورود/ثبت نام</span></Link>
                          }
-           
-                    </div>  
+                    </div> 
                 </div>
                 <div className={bem.e('search-wrapper')}>
                     <form>
@@ -27,6 +29,15 @@ const Header = ({currentuser})=>(
                         <Logo  className={bem.e('img')} />
                     </a>
                 </div>
+                {
+                    Hidden_Show_DW  ? null: <ShopCardDropDown />//hidden and show shopdropdown
+                }
+               
             </div>
         )
-export default Header;
+//روش ديستراكچر 
+const mapStateToProps = ({user :{currentUser},card :{Hidden_Show_DW}})=>({
+    currentUser,
+    Hidden_Show_DW 
+});        
+export default connect(mapStateToProps)(Header);
