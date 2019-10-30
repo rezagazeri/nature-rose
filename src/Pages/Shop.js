@@ -18,14 +18,20 @@ export default class Shop extends Component {
         const {collections}= this.state;
         return (
             <div className={bem.b('shop')}>
-               {
+                <section className={bem.e('Cards')} >
+                {
                   collections.map(({id,...othercollectionprops})=>(
                      <Previewcollection 
                         key={id}
                         {...othercollectionprops}
                      />  
                   ))
-               } 
+               }   
+                </section>
+                <section className={bem.e('filters')}>
+                   <p>filtes is hier....</p>
+                </section>
+               
             </div>
         )
     }

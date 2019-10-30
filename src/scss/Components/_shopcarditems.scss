@@ -2,9 +2,23 @@
     @include flex-dis(column,center,center);
     position: absolute;
     top: 50px;
-    @include dim(em(240px),auto);
-    padding: 20px;
+    @include dim(em(290px),auto);
+    padding: 10px ;
     border: 1px solid black;
     background-color: white;
     z-index: 5;
+
+    @include  el(card-container){
+      width: 100%;
+      height: em(200px);
+      display: flex;
+      flex-direction: column;
+      overflow:auto;
+      margin-bottom: em(15px);
+    }
+    @include el(btn-container){
+      width: 80%;
+      @include flex-dis(row,center,space-between);
+
+    }
 }

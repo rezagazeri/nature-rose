@@ -6,7 +6,8 @@ import  bn from '../../Utils/bemnames';
 
 const bem =bn.create('prcollection');
 
-const Previewcollection = ({title,items})=>(
+const Previewcollection = ({title ,items})=>(
+
    <div className={bem.b('prcollection')}>
       <h1>{title}</h1>
       <section className={bem.e('cards')}>
@@ -18,11 +19,13 @@ const Previewcollection = ({title,items})=>(
                 imageUrl={item.imageUrl}
                 imageSize={img.shopcard}
                 key={item.id}
-                price = {<Pricecard />} 
+                price = {<Pricecard item = {item} />} 
               />
+
            ))
         }
       </section>
    </div>
+  
 );
 export default Previewcollection;

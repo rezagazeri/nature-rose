@@ -1,9 +1,7 @@
 .cr-Homepage{
     @include flex-dis(column,center,flex-start);
-    min-height: 100vh;
-    width: 96%;
+    @extend %pages_dim;
     border : 1px solid blueviolet;
-    @include margin(em(10px),auto,0,auto);
     @include el(slitem){
         @include flex-dis(row,center,space-between);
         width: 100%;

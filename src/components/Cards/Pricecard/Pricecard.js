@@ -1,7 +1,9 @@
 import React from 'react';
+import {connect} from 'react-redux';
+import {AddCardItem} from '../../../Redux/Card/CardAction';
 import bn from '../../../Utils/bemnames';
 const bem = bn.create('card');
-const Pricecard = props=>(
+const Pricecard = ({item,AddToShopcard})=>(
  <div className={bem.e('price')}>
  {/* TODO : درست كردن استايل اين قسمت در فايل SASS */}
     <h3 > خاك رس صورتي </h3>
@@ -9,10 +11,12 @@ const Pricecard = props=>(
     <span>35000</span>
     <span>تخفيف</span>
     <footer className={bem.e('footer')}>
-         <button>افزودن به سبد خريد</button>
+         <button onClick={()=>AddToShopcard(item)} >افزودن به سبد خريد</button>
      </footer >
 </div>
      
 );
-
-export default Pricecard;
+const mapDispatchToProps = dispatch =>({
+     AddToShopcard : item=>(dispatch(AddCardItem(item)))  
+})
+export default connect(null,mapDispatchToProps)(Pricecard);

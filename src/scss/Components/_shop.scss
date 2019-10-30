@@ -1,0 +1,15 @@
+.cr-shop{
+    @include flex-dis(row,flex-start,space-between);
+    @extend %pages_dim;
+
+    @include el(Cards){
+      order: 1;
+      width: 75%;
+      border:1px solid blue;
+
+    }
+    @include el(filters){
+      width :calc(25% - 15px );  
+      border : 1px solid red;
+    }
+}

@@ -1,0 +1,23 @@
+.carditem{
+    @include flex-dis(row,center,space-between);
+    width: 100%;
+    border-bottom: 1px solid $cwhite;
+    @include padding(5px,0,10px,0);
+    @include el(img){
+       @include dim(em(40px),em(40px));
+       border-radius: 50%;
+       box-shadow: 2px 2px 8px $cwhite;
+       order :1;
+    }
+    @include el(textcontainer){
+        @include flex-dis(row,center,space-between);
+        flex-grow: 1;
+    }
+    @include el(name){
+        margin-right: em(5px);
+    }
+    @include el(price-quantity){
+        
+    }
+
+}

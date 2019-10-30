@@ -1,0 +1,5 @@
+.cr-prcollection{
+    @include el(cards){
+        @include flex-dis(row,flex-start,space-between);
+    }
+}

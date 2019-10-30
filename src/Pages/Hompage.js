@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import Card from '../components/Cards/Card';
 import CardHeader from '../components/Cards/Headercard/Headercard';
+import {connect} from 'react-redux';
+import {AddCardItem} from '../Redux/Card/CardAction';
 import bn from '../Utils/bemnames';
 import Pricecard from '../components/Cards/Pricecard/Pricecard';
 import img from '../images/Images';
 import SHOP_DATA from  '../ShopData';
 const bem =bn.create('Homepage'); 
-export default class Hompage extends Component {
+ class Hompage extends Component {
   // static props for pictures in home page
  
    
@@ -51,4 +53,6 @@ export default class Hompage extends Component {
     )
   }
 }
+
+  export default Hompage;
 
