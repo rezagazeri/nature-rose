@@ -4,3 +4,8 @@
     width: 96%;
     @include margin(em(10px),auto,0,auto);
 }
+%padd-rad{
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+}  

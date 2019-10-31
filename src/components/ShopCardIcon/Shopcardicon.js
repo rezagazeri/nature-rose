@@ -5,11 +5,11 @@ import {ReactComponent as Shopcard} from  '../../images/shopping-bag.svg';
 
 
 
-const Shopcardicon = ({ToggleClickHandler}) => {
+const Shopcardicon = ({ToggleClickHandler,quantity}) => {
     return (
         <div className='shopicon' onClick={ToggleClickHandler}>
             <Shopcard  className='shopicon__icon'/>
-            <span className='shopicon__count'>0</span>
+            <span className='shopicon__count'>{quantity}</span>
             <span className='shopicon__text'>سبد خريد</span>
         </div>
     );
@@ -17,7 +17,10 @@ const Shopcardicon = ({ToggleClickHandler}) => {
 const mapDispatchToProps=dispatch=>({
     ToggleClickHandler :()=>dispatch(CardDropDown())
 });
-export default connect(null,mapDispatchToProps)(Shopcardicon);
+const mapStateToProps = ({card : {Shop_Card_Items}})=>({
+     quantity : Shop_Card_Items.reduce((totalQuantity,item)=>totalQuantity + item.quantity,0)
+});
+export default connect(mapStateToProps,mapDispatchToProps)(Shopcardicon);
 
 
 

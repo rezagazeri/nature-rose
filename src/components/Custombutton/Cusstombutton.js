@@ -1,6 +1,6 @@
 import React from 'react';
 const CustomButton = ({ children, isGoogleSignIn, ...otherProps }) => (
-    <button
+    <button 
       className={`${isGoogleSignIn ? 'google-sign-in' : ''} custom-button`}
       {...otherProps}
     >

@@ -1,33 +1,57 @@
 .custom-button {
-    width: em(125px);
-    width: auto;
-    height: em(50px);
+  @include dim(auto,em(50px));
+    position: relative;
     letter-spacing: 0.5px;
     line-height:em(50px);
+    @include color-appear(map-get($back-color , btncolor ),map-get($back-color , default));
+    text-decoration: none;
     padding: 0 15px 0 15px;
-    font-size: 15px;
-    background-color: black;
-    color: white;
+    font-size: 12px;
+    box-shadow: 0px 0px 12px -2px rgba(0,0,0,0.5);
     text-transform:capitalize;
-    font-family: 'Open Sans Condensed';
+    font-family: $fontfamily;
     font-weight: bolder;
     border: none;
     cursor: pointer;
     border-radius: 5px;
-    &:hover {
-      background-color: white;
-      color: black;
-      border: 1px solid black;
+    transition: background-color .6s ease;
+    overflow: hidden;
+  &:after {
+    content: "";
+    position: absolute;
+    @include dim(0,0);
+    top: 50%;
+    left: 50%;
+    transform-style: flat;
+    transform: translate3d(-50%,-50%,0);
+    background: rgba(white,.1);
+    border-radius: 100%;
+    transition: width .3s ease, height .3s ease;
+  }
+  &:focus,
+  &:hover {
+      background: darken(map-get($back-color , btncolor ),7%);
+      outline: none;
+  }
+  &:active {
+    &:after {
+     @include dim(em(200px),em(200px));
+
     }
+  }
   
     &.google-sign-in {
-      background-color: #4285f4;
-      color: white;
-  
+      @include color-appear(#4285f4,map-get($back-color , default));
       &:hover {
         background-color: #357ae8;
         border: none;
       }
     }
   }
+  
+
+
+
+  
+  
   

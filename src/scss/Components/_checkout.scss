@@ -1,0 +1,26 @@
+.cr-checkout{
+    @include flex-dis(column,center);
+    @include el(pricecontainer){
+        @include flex-dis(row,center,flex-start);
+        width: 96%;
+
+    }
+    @include el(sumcontainer){
+        @include flex-dis(column,center);
+        width: 30%;
+    }
+    @include el(price){
+        @include flex-dis(row,center,space-between);
+        width: 100%;
+        padding: 10px 10px;
+        
+    }
+    @include el(cardcontainer){
+        @include flex-dis(column,center);
+        padding: em(10px) em(25px);
+        width: 70%;
+
+
+    }
+
+}

@@ -1,0 +1,16 @@
+.iconbtn{
+    padding: 0;
+     @include dim(em(20px),em(20px));
+     @extend %padd-rad; 
+     background: none;
+     transition: all .2s;
+     svg{
+        @include dim(100%,100%);
+        &:focus,&:active{
+            transform : translateY(1px);
+         }
+     }
+     &:focus,&:active{
+             outline: none;
+         }     
+   }  

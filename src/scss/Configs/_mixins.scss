@@ -10,6 +10,11 @@
         @content;
     }
 }
+//===================color - appearance=====================================
+    @mixin color-appear($background,$color) {
+        background-color:$background;
+        color:$color;
+    }
 //===================assiegn display flex=============================
 @mixin flex-dis($dir,$algin:null,$jus:null){
     display: flex;

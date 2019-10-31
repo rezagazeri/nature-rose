@@ -12,6 +12,7 @@ import Hompage from './Pages/Hompage';
 import Shop from './Pages/Shop';
 import LoginLogoutPage from './Pages/Login-Logout';
 import {auth,createUserProfileDocument} from './firebase/firebase.utils';
+import Checkout from './Pages/Checkout';
 
  class App extends Component {
   constructor(props){
@@ -72,6 +73,7 @@ const {setCurrentUser} = this.props;
           <Route exact path ='/' render={(routeProps)=><Hompage {...routeProps} />} />
           <Route exact path ='/shop' render={(routeProps)=><Shop {...routeProps} />} />
           <Route exact path ='/signin' component={LoginLogoutPage } />
+          <Route exact path ='/checkout' component={Checkout} />
         </Switch>
         
       </div>

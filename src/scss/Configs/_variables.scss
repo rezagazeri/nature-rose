@@ -13,6 +13,7 @@ $font-weight--larg        : 600;
 
 $default-line-height      : 1.4;
 //============color=================================
+     $primery-color :#4d4d4d;
      $cwhite :rgb(85, 82, 82);
      $hcolor :#F59A83;
      $menu-shadow:#ccc;
@@ -21,8 +22,9 @@ $back-color : (
     default : #ffff,
     backdrow :rgba(38, 38, 38,.7),
     menu-linkHover: #ffcccc,
-    bshop-icon :#ff6699
-
+    bshop-icon :#ff6699,
+    btncolor : #d60644,
+    btn-shadow : #95042f
 );
 
 
