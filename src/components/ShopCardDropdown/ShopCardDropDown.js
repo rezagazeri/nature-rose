@@ -1,6 +1,8 @@
 import React from 'react';
 import CustomButton from '../Custombutton/Cusstombutton';
 import {withRouter} from 'react-router-dom';
+import {createStructuredSelector} from 'reselect';
+import {selectShopCardItems}  from '../../Redux/Card/Cardselectors';
 import CardItem from '../CardItem/CardItem';
 import {connect} from 'react-redux';
 
@@ -24,7 +26,7 @@ const ShopCardDropDown = ({Shop_Card_Items,history})=> {
          return (<div className={bem.b('shopcarditems')}  > سبد خريد شما خالي است </div>) }
 };
 
-const mapStateToProps = ({card:{Shop_Card_Items}})=>({
-    Shop_Card_Items  
+const mapStateToProps =createStructuredSelector({
+    Shop_Card_Items : selectShopCardItems 
 })
 export default withRouter(connect(mapStateToProps)(ShopCardDropDown));

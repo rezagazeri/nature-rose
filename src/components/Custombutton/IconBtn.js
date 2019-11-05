@@ -11,10 +11,10 @@ const iconTypes = {
 };
 
 
-const IconBtn = ({ name, ...props }) => {
+const IconBtn = ({ name,click, ...props }) => {
   let Icon = iconTypes[name];
     return (
-        <button className='iconbtn'>
+        <button className='iconbtn' onClick={click} >
           <Icon {...props} />
         </button>
     );

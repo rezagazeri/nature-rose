@@ -2,6 +2,9 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import {auth} from '../../firebase/firebase.utils';
 import {connect} from 'react-redux';
+import {createStructuredSelector} from 'reselect';
+import {selectHiddenShowDW} from '../../Redux/Card/Cardselectors';
+import {selectcurrentUser} from '../../Redux/user/Userselector';
 import Shopcardicon from '../ShopCardIcon/Shopcardicon';
 import ShopCardDropDown from '../ShopCardDropdown/ShopCardDropDown';
 import {ReactComponent as Logo } from '../../images/crown.svg';
@@ -36,8 +39,8 @@ const Header = ({currentUser,Hidden_Show_DW })=>(
             </div>
         )
 //روش ديستراكچر 
-const mapStateToProps = ({user :{currentUser},card :{Hidden_Show_DW}})=>({
-    currentUser,
-    Hidden_Show_DW 
+const mapStateToProps = createStructuredSelector({
+    currentUser:selectcurrentUser,
+    Hidden_Show_DW :selectHiddenShowDW
 });        
 export default connect(mapStateToProps)(Header);

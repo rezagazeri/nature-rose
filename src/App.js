@@ -2,6 +2,8 @@ import React,{Component} from 'react';
 import {Route,Switch} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {setCurrentUser,isOpenSidebarMenu} from './Redux';
+import {createStructuredSelector} from 'reselect';
+import {selectisOpenSidebarMenu} from './Redux/user/Userselector';
 import './scss/utils/app.scss';
 import Header from './components/Header/Header'
 import TitelHeader from './components/TitelHeader/TitelHeader';
@@ -80,9 +82,9 @@ const {setCurrentUser} = this.props;
     )
   }
 }
-const mapStateToProps = state=>({
-  OpenCloseSideMenu : state.user.isOpenSidebarMenu 
-})
+const mapStateToProps = createStructuredSelector({
+  OpenCloseSideMenu : selectisOpenSidebarMenu
+});
 const mapDispatchToProps = dispatch=>({
   setCurrentUser : user=>(dispatch(setCurrentUser(user))),
   isOpenSidebarMenu :()=>(dispatch(isOpenSidebarMenu()))

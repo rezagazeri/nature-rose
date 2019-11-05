@@ -1,6 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {CardDropDown}  from '../../Redux/Card/CardAction';
+import {selectShopCardquantity} from '../../Redux/Card/Cardselectors'
+import {createStructuredSelector} from 'reselect'
 import {ReactComponent as Shopcard} from  '../../images/shopping-bag.svg';
 
 
@@ -17,8 +19,8 @@ const Shopcardicon = ({ToggleClickHandler,quantity}) => {
 const mapDispatchToProps=dispatch=>({
     ToggleClickHandler :()=>dispatch(CardDropDown())
 });
-const mapStateToProps = ({card : {Shop_Card_Items}})=>({
-     quantity : Shop_Card_Items.reduce((totalQuantity,item)=>totalQuantity + item.quantity,0)
+const mapStateToProps = createStructuredSelector ({
+     quantity : selectShopCardquantity
 });
 export default connect(mapStateToProps,mapDispatchToProps)(Shopcardicon);
 
