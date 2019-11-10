@@ -66,14 +66,14 @@ const {setCurrentUser} = this.props;
     }
     return (
       <div>
-        <TitelHeader />
+        {/* <TitelHeader /> */}
         <Header />
         <ToolBar sideMenuClick={this.handleClick} />
         <SideToolbar />
         {menustate}
         <Switch >
           <Route exact path ='/' render={(routeProps)=><Hompage {...routeProps} />} />
-          <Route exact path ='/shop' render={(routeProps)=><Shop {...routeProps} />} />
+          <Route  path ='/shop' component={Shop} />
           <Route exact path ='/signin' component={LoginLogoutPage } />
           <Route exact path ='/checkout' component={Checkout} />
         </Switch>

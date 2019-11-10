@@ -2,7 +2,6 @@ import {CardActionTyps} from './CardActionTypeS';
 import {
     CardquantityCalc
     ,CardquantityPlus,
-    CardRemoveItem,
     CardquantityMinus}  from '../../Utils/CardquantityCalc';
 
 const INISIAL_STATE={

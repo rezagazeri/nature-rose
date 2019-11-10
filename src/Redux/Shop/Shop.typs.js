@@ -1,0 +1,3 @@
+export const ShopActionTyps = {
+  UPDATE_DATA_FROM_FIREBASE : "UPDATE_DATA_FROM_FIREBASE"
+};
