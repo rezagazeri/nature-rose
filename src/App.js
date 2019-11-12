@@ -10,11 +10,11 @@ import TitelHeader from './components/TitelHeader/TitelHeader';
 import ToolBar from './components/Toolbar/ToolBar';
 import SideToolbar from './components/SideToolbar/SideToolbar';
 import BackDrow from './components/BackDrow/BackDrow';
-import Hompage from './Pages/Hompage';
-import Shop from './Pages/Shop';
-import LoginLogoutPage from './Pages/Login-Logout';
+import Hompage from './Pages/Homepage/Hompage';
+import Shop from './Pages/Shop/Shop';
+import LoginLogoutPage from './Pages/Loginlogout/Login-Logout';
 import {auth,createUserProfileDocument} from './firebase/firebase.utils';
-import Checkout from './Pages/Checkout';
+import Checkout from './Pages/Checkout/Checkout';
 
  class App extends Component {
   constructor(props){

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import Card from '../components/Cards/Card';
-import CardHeader from '../components/Cards/Headercard/Headercard';
-import bn from '../Utils/bemnames';
-import Pricecard from '../components/Cards/Pricecard/Pricecard';
-import img from '../images/Images';
+import Card from '../../components/Cards/Card';
+import CardHeader from '../../components/Cards/Headercard/Headercard';
+import bn from '../../Utils/bemnames';
+import Pricecard from '../../components/Cards/Pricecard/Pricecard';
+import img from '../../images/Images';
 const bem =bn.create('Homepage'); 
  class Hompage extends Component {
   // static props for pictures in home page

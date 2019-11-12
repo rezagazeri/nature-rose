@@ -1,9 +1,9 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import img from '../images/Images';
-import { selectCollectionItem } from '../Redux/Shop/Shop.selectors';
-import Card from '../components/Cards/Card';
-import Pricecard from '../components/Cards/Pricecard/Pricecard';
+import img from '../../images/Images';
+import { selectCollectionItem } from '../../Redux/Shop/Shop.selectors';
+import Card from '../../components/Cards/Card';
+import Pricecard from '../../components/Cards/Pricecard/Pricecard';
 const CollectionProduct = ({Collection,match}) => {
     const {title,items} = Collection;
     return (

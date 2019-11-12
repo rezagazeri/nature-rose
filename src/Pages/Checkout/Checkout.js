@@ -1,10 +1,10 @@
 import React from 'react';
-import CustomButton from '../components/Custombutton/Cusstombutton';
+import CustomButton from '../../components/Custombutton/Cusstombutton';
 import {connect} from 'react-redux';
 import {createStructuredSelector} from 'reselect';
-import {selectShopCardItems,selectTotalCalc} from '../Redux/Card/Cardselectors';
-import CheckoutItem from '../components/Checkoutitem/CheckoutItem';
-import bn from '../Utils/bemnames';
+import {selectShopCardItems,selectTotalCalc} from '../../Redux/Card/Cardselectors';
+import CheckoutItem from '../../components/Checkoutitem/CheckoutItem';
+import bn from '../../Utils/bemnames';
 const bem =bn.create('checkout');
 const Checkout = ({Shop_Card_Items,AddItem}) => {
     return (
