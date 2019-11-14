@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Route} from 'react-router-dom';
 import {connect} from 'react-redux';
-import {FetchShopDataFromServer} from '../../Redux/Shop/Shop.action';
+import {StartDataFetching} from '../../Redux/Shop/Shop.action';
 import ShopOverviewContainer from '../../components/ShopOverview/Shopoverview.Container';
 import Collectionproductcontainer from '../../Pages/Collectionproduct/Collectionproduct.container';
 import bn from '../../Utils/bemnames';
@@ -32,7 +32,7 @@ const bem =bn.create('shop');
     }
 }
 const mapDispatchToProps = dispatch=>({
-  FetchShopDataFromServerAsync :()=> dispatch(FetchShopDataFromServer())
+  FetchShopDataFromServerAsync :()=> dispatch(StartDataFetching())
 });
 
 

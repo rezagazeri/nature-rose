@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import FormInput from '../FormInput/Forminput';
 import CustomButton from '../../components/Custombutton/Cusstombutton';
-import {signInWithGoogle,auth,createUserProfileDocument} from '../../firebase/firebase.utils';
+import {signInWithGoogle,auth} from '../../firebase/firebase.utils';
 import bn from '../../Utils/bemnames';
 const bem =bn.create('signin'); 
 
